@@ -13,43 +13,35 @@ public class BookSwimmingLesson {
     private String[][][] timetable = {
             // Monday
             {
-                    {"Grade1_Lesson1", "CoachA"},
-                    {"Grade2_Lesson1", "CoachB"},
-                    {"Grade3_Lesson1", "CoachC"},
-                    {"Grade4_Lesson1", "CoachD"},
-                    {"Grade5_Lesson1", "CoachE"}
+                    {"Grade1_Lesson1", "CoachA", "4-5pm"},
+                    {"Grade2_Lesson1", "CoachB", "5-6pm"},
+                    {"Grade3_Lesson1", "CoachC", "6-7pm"},
+                    {"Grade4_Lesson1", "CoachD", "4-5pm"},
+                    {"Grade5_Lesson1", "CoachE", "5-6pm"}
             },
             // Wednesday
             {
-                    {"Grade1_Lesson2", "CoachA"},
-                    {"Grade2_Lesson2", "CoachB"},
-                    {"Grade3_Lesson2", "CoachC"},
-                    {"Grade4_Lesson2", "CoachD"},
-                    {"Grade5_Lesson2", "CoachE"}
+                    {"Grade1_Lesson2", "CoachA", "4-5pm"},
+                    {"Grade2_Lesson2", "CoachB", "5-6pm"},
+                    {"Grade3_Lesson2", "CoachC", "6-7pm"},
+                    {"Grade4_Lesson2", "CoachD", "4-5pm"},
+                    {"Grade5_Lesson2", "CoachE", "5-6pm"}
             },
             // Friday
             {
-                    {"Grade1_Lesson3", "CoachA"},
-                    {"Grade2_Lesson3", "CoachB"},
-                    {"Grade3_Lesson3", "CoachC"},
-                    {"Grade4_Lesson3", "CoachD"},
-                    {"Grade5_Lesson3", "CoachE"}
+                    {"Grade1_Lesson3", "CoachA", "4-5pm"},
+                    {"Grade2_Lesson3", "CoachB", "5-6pm"},
+                    {"Grade3_Lesson3", "CoachC", "6-7pm"},
+                    {"Grade4_Lesson3", "CoachD", "4-5pm"},
+                    {"Grade5_Lesson3", "CoachE", "5-6pm"}
             },
             // Saturday
             {
-                    {"Grade1_Lesson4", "CoachA"},
-                    {"Grade2_Lesson4", "CoachB"},
-                    {"Grade3_Lesson4", "CoachC"},
-                    {"Grade4_Lesson4", "CoachD"},
-                    {"Grade5_Lesson4", "CoachE"}
-            },
-            // Saturday
-            {
-                    {"Grade1_Lesson5", "CoachA"},
-                    {"Grade2_Lesson5", "CoachB"},
-                    {"Grade3_Lesson5", "CoachC"},
-                    {"Grade4_Lesson5", "CoachD"},
-                    {"Grade5_Lesson5", "CoachE"}
+                    {"Grade1_Lesson4", "CoachA", "2-3pm"},
+                    {"Grade2_Lesson4", "CoachB", "3-4pm"},
+                    {"Grade3_Lesson4", "CoachC", "2-3pm"},
+                    {"Grade4_Lesson4", "CoachD", "3-4pm"},
+                    {"Grade5_Lesson4", "CoachE", "2-3pm"}
             }
     };
 
@@ -78,7 +70,7 @@ public class BookSwimmingLesson {
         if (dayIndex != -1) {
             System.out.println("Timetable for " + day + ":");
             for (String[] lesson : timetable[dayIndex]) {
-                System.out.println("Lesson: " + lesson[0] + ", Coach: " + lesson[1]);
+                System.out.println("Lesson: " + lesson[0] + ", Coach: " + lesson[1] + ", Time: " + lesson[2]);
             }
             bookLesson(day);
         } else {
@@ -91,7 +83,7 @@ public class BookSwimmingLesson {
         for (int i = 0; i < timetable.length; i++) {
             for (String[] lesson : timetable[i]) {
                 if (lesson[0].startsWith("Grade" + grade)) {
-                    System.out.println("Day: " + DAYS[i] + ", Lesson: " + lesson[0] + ", Coach: " + lesson[1]);
+                    System.out.println("Day: " + DAYS[i] + ", Lesson: " + lesson[0] + ", Coach: " + lesson[1] + ", Time: " + lesson[2]);
                 }
             }
         }
@@ -103,7 +95,7 @@ public class BookSwimmingLesson {
         for (int i = 0; i < timetable.length; i++) {
             for (String[] lesson : timetable[i]) {
                 if (lesson[1].equals(coach)) {
-                    System.out.println("Day: " + DAYS[i] + ", Lesson: " + lesson[0] + ", Grade: " + getGrade(lesson[0]));
+                    System.out.println("Day: " + DAYS[i] + ", Lesson: " + lesson[0] + ", Grade: " + getGrade(lesson[0]) + ", Time: " + lesson[2]);
                 }
             }
         }
@@ -160,6 +152,7 @@ public class BookSwimmingLesson {
 
         System.out.println("Lesson booked successfully.");
     }
+
     private void bookLessonByGrade(String grade) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the day to book a lesson for Grade " + grade + ":");
