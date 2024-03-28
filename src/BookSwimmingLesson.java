@@ -7,8 +7,20 @@ public class BookSwimmingLesson {
     private static final String[] DAYS = {"Monday", "Wednesday", "Friday", "Saturday"};
     private static final String[] COACHES = {"CoachA", "CoachB", "CoachC", "CoachD", "CoachE"};
 
+
     private List<String[]> bookedLessons; // Stores the booked lessons' data
     private List<String[]> learners; // Stores the learners' data
+    private List<String[]> lessonReviews; // Stores reviews for attended lessons
+
+    private String[] getLearnerDataByName(String name) {
+        for (String[] learner : learners) {
+            if (learner[0].equalsIgnoreCase(name)) {
+                return learner;
+            }
+        }
+        // If learner not found, return an empty array or null
+        return null;
+    }
 
     private String[][][] timetable = {
             // Monday
@@ -48,6 +60,7 @@ public class BookSwimmingLesson {
     public BookSwimmingLesson() {
         bookedLessons = new ArrayList<>();
         learners = new ArrayList<>();
+        lessonReviews = new ArrayList<>();
     }
 
     public List<String[]> getBookedLessons() {
@@ -80,10 +93,12 @@ public class BookSwimmingLesson {
 
     public void displayTimetableByGrade(String grade) {
         System.out.println("Timetable for Grade " + grade + ":");
+        int currentGrade = Integer.parseInt(grade);
         for (int i = 0; i < timetable.length; i++) {
             for (String[] lesson : timetable[i]) {
-                if (lesson[0].startsWith("Grade" + grade)) {
-                    System.out.println("Day: " + DAYS[i] + ", Lesson: " + lesson[0] + ", Coach: " + lesson[1] + ", Time: " + lesson[2]);
+                int lessonGrade = Integer.parseInt(lesson[0].substring(5, 6));
+                if (lessonGrade == currentGrade || lessonGrade == currentGrade + 1) {
+                    System.out.println("Day: " + DAYS[i] + ", Lesson: " + lesson[0] + ", Coach: " + lesson[1]);
                 }
             }
         }
@@ -118,6 +133,7 @@ public class BookSwimmingLesson {
             System.out.println("Invalid grade.");
             return;
         }
+
 
         System.out.print("Enter learner's name: ");
         String name = scanner.nextLine();
@@ -165,6 +181,40 @@ public class BookSwimmingLesson {
         System.out.println("Enter the day to book a lesson with Coach " + coach + ":");
         String day = scanner.nextLine();
         displayTimetableByDay(day);
+    }
+
+    public void incrementGrade(String learnerName) {
+        for (String[] learner : learners) {
+            if (learner[0].equalsIgnoreCase(learnerName)) {
+                int currentGrade = Integer.parseInt(learner[4]);
+                if (currentGrade < 5) {
+                    currentGrade++;
+                    learner[4] = String.valueOf(currentGrade);
+                    System.out.println("Grade level incremented for learner " + learnerName + ". New grade: " + currentGrade);
+                } else {
+                    System.out.println("The learner " + learnerName + " has reached the maximum grade level.");
+                }
+                break;
+            }
+        }
+    }
+
+    public boolean isLessonBooked(String day, String grade, String lessonNumber) {
+        for (String[] lesson : bookedLessons) {
+            if (lesson[0].equalsIgnoreCase(day) && lesson[2].equalsIgnoreCase(grade) && lesson[1].equalsIgnoreCase(lessonNumber)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addReview(String day, String grade, String lessonNumber, String review, int rating) {
+        String[] reviewData = {day, grade, lessonNumber, review, String.valueOf(rating)};
+        lessonReviews.add(reviewData);
+    }
+
+    public List<String[]> getLessonReviews() {
+        return lessonReviews;
     }
 
 

@@ -5,7 +5,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Hatfield Junior Swimming School!");
         BookSwimmingLesson bookSwimmingLesson = new BookSwimmingLesson();
-        Change_Cancel_Booking changeCancelBooking = new Change_Cancel_Booking(bookSwimmingLesson);
 
         while (true) {
             System.out.println("\nMenu:");
@@ -19,7 +18,7 @@ public class Main {
 
             System.out.print("\nEnter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine();  // Consume newline
 
             switch (choice) {
                 case 1:
@@ -49,35 +48,33 @@ public class Main {
                     }
                     break;
 
-                case 2:
-                    System.out.println("Change/Cancel a booking:");
-                    System.out.println("1. Cancel booking");
-                    System.out.println("2. Change booking");
-                    System.out.print("Enter your choice: ");
-                    int changeCancelChoice = scanner.nextInt();
-                    scanner.nextLine();
-                    switch (changeCancelChoice) {
-                        case 1:
-                            System.out.print("Enter learner's name to cancel booking: ");
-                            String cancelName = scanner.nextLine();
-                            changeCancelBooking.cancelBooking(cancelName);
-                            break;
-                        case 2:
-                            System.out.print("Enter learner's name to change booking: ");
-                            String changeName = scanner.nextLine();
-                            changeCancelBooking.changeBooking(changeName);
-                            break;
-                        default:
-                            System.out.println("Invalid choice.");
-                            break;
-                    }
+                case 3:
+                    System.out.println("Attend a swimming lesson:");
+                    System.out.print("Enter your name: ");
+                    String learnerName = scanner.nextLine();
+                    System.out.print("Enter the day of the lesson you want to attend: ");
+                    String day = scanner.nextLine();
+                    System.out.print("Enter the grade: ");
+                    String grade = scanner.nextLine();
+                    System.out.print("Enter the lesson number: ");
+                    String lessonNumber = scanner.nextLine();
+                    System.out.print("Write a review of the lesson: ");
+                    String review = scanner.nextLine();
+                    System.out.print("Enter a rating for the lesson (1 to 5): ");
+                    int rating = scanner.nextInt();
+                    scanner.nextLine();  // Consume newline
+                    bookSwimmingLesson.addReview(day, grade, lessonNumber, review, rating);
+                    System.out.println("Thank you for attending the lesson!");
                     break;
 
                 case 7:
                     System.out.println("Exiting the program...");
                     System.exit(0);
+                    break;
+
                 default:
                     System.out.println("Invalid choice. Please try again.");
+                    break;
             }
         }
     }
