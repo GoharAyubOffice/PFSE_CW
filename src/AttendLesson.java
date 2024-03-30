@@ -33,6 +33,7 @@ public class AttendLesson {
             System.out.print("Rate the lesson from 1 to 5 (1: Very dissatisfied, 2: Dissatisfied, 3: Ok, 4: Satisfied, 5: Very Satisfied): ");
             int rating = scanner.nextInt();
             scanner.nextLine(); // Consume newline
+            System.out.print("Thanks for giving Review :)");
             // Store the review and rating
             swimmingLesson.addReview(day, grade, lessonNumber, review, rating);
         } else {
