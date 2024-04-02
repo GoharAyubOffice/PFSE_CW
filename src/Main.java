@@ -29,9 +29,9 @@ public class Main {
                     scanner.nextLine();
                     switch (timetableChoice) {
                         case 1:
-                            System.out.print("Enter the day: ");
-                            String day = scanner.nextLine();
-                            bookSwimmingLesson.displayTimetableByDay(day);
+                            System.out.print("Enter the week number to view timetable (1-4): ");
+                            int week = scanner.nextInt();
+                            bookSwimmingLesson.displayTimetable(week - 1);
                             break;
                         case 2:
                             System.out.print("Enter the grade: ");
@@ -76,6 +76,12 @@ public class Main {
                     AttendLesson attendLesson = new AttendLesson(bookSwimmingLesson);
                     attendLesson.attendLesson();
                     break;
+                case 4:
+                    // Generate monthly learner report
+                    Report report = new Report(bookSwimmingLesson);
+                    report.generateMonthlyLearnerReport(scanner);
+                    break;
+
                 case 6:
                     // Register a new learner
                     System.out.print("Enter learner's name: ");
