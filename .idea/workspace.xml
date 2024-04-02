@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="faf5006a-4383-4a36-ab8a-db40b367eddd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookSwimmingLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookSwimmingLesson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Report.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,8 @@
       <workItem from="1711833512673" duration="107000" />
       <workItem from="1711833668557" duration="39000" />
       <workItem from="1712013317932" duration="2639000" />
-      <workItem from="1712015974917" duration="63000" />
+      <workItem from="1712015974917" duration="146000" />
+      <workItem from="1712072740564" duration="7739000" />
     </task>
     <servers />
   </component>
@@ -89,5 +92,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

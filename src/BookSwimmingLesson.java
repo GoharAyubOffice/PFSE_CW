@@ -12,6 +12,20 @@ public class BookSwimmingLesson {
     private List<String[]> learners; // Stores the learners' data
     private List<String[]> lessonReviews; // Stores reviews for attended lessons
 
+    public List<String[]> getLearners() {
+        return learners;
+    }
+
+    public List<String[]> getBookedLessonsByLearner(String learnerName) {
+        List<String[]> lessons = new ArrayList<>();
+        for (String[] lesson : bookedLessons) {
+            if (lesson[3].equalsIgnoreCase(learnerName)) {
+                lessons.add(lesson);
+            }
+        }
+        return lessons;
+    }
+
     private String[] getLearnerDataByName(String name) {
         for (String[] learner : learners) {
             if (learner[0].equalsIgnoreCase(name)) {
@@ -22,38 +36,41 @@ public class BookSwimmingLesson {
         return null;
     }
 
-    private String[][][] timetable = {
-            // Monday
+    private String[][][][] timetable = {
+            // Week 1
             {
-                    {"Grade1_Lesson1", "CoachA", "4-5pm"},
-                    {"Grade2_Lesson1", "CoachB", "5-6pm"},
-                    {"Grade3_Lesson1", "CoachC", "6-7pm"},
-                    {"Grade4_Lesson1", "CoachD", "4-5pm"},
-                    {"Grade5_Lesson1", "CoachE", "5-6pm"}
-            },
-            // Wednesday
-            {
-                    {"Grade1_Lesson2", "CoachA", "4-5pm"},
-                    {"Grade2_Lesson2", "CoachB", "5-6pm"},
-                    {"Grade3_Lesson2", "CoachC", "6-7pm"},
-                    {"Grade4_Lesson2", "CoachD", "4-5pm"},
-                    {"Grade5_Lesson2", "CoachE", "5-6pm"}
-            },
-            // Friday
-            {
-                    {"Grade1_Lesson3", "CoachA", "4-5pm"},
-                    {"Grade2_Lesson3", "CoachB", "5-6pm"},
-                    {"Grade3_Lesson3", "CoachC", "6-7pm"},
-                    {"Grade4_Lesson3", "CoachD", "4-5pm"},
-                    {"Grade5_Lesson3", "CoachE", "5-6pm"}
-            },
-            // Saturday
-            {
-                    {"Grade1_Lesson4", "CoachA", "2-3pm"},
-                    {"Grade2_Lesson4", "CoachB", "3-4pm"},
-                    {"Grade3_Lesson4", "CoachC", "2-3pm"},
-                    {"Grade4_Lesson4", "CoachD", "3-4pm"},
-                    {"Grade5_Lesson4", "CoachE", "2-3pm"}
+                    // Monday
+                    {
+                            {"2024-03-04", "Grade1_Lesson1", "CoachA", "4-5pm"},
+                            {"2024-03-04", "Grade2_Lesson1", "CoachB", "5-6pm"},
+                            {"2024-03-04", "Grade3_Lesson1", "CoachC", "6-7pm"},
+                            {"2024-03-04", "Grade4_Lesson1", "CoachD", "4-5pm"},
+                            {"2024-03-04", "Grade5_Lesson1", "CoachE", "5-6pm"}
+                    },
+                    // Wednesday
+                    {
+                            {"2024-03-06", "Grade1_Lesson2", "CoachA", "4-5pm"},
+                            {"2024-03-06", "Grade2_Lesson2", "CoachB", "5-6pm"},
+                            {"2024-03-06", "Grade3_Lesson2", "CoachC", "6-7pm"},
+                            {"2024-03-06", "Grade4_Lesson2", "CoachD", "4-5pm"},
+                            {"2024-03-06", "Grade5_Lesson2", "CoachE", "5-6pm"}
+                    },
+                    // Friday
+                    {
+                            {"2024-03-08", "Grade1_Lesson3", "CoachA", "4-5pm"},
+                            {"2024-03-08", "Grade2_Lesson3", "CoachB", "5-6pm"},
+                            {"2024-03-08", "Grade3_Lesson3", "CoachC", "6-7pm"},
+                            {"2024-03-08", "Grade4_Lesson3", "CoachD", "4-5pm"},
+                            {"2024-03-08", "Grade5_Lesson3", "CoachE", "5-6pm"}
+                    },
+                    // Saturday
+                    {
+                            {"2024-03-09", "Grade1_Lesson4", "CoachA", "2-3pm"},
+                            {"2024-03-09", "Grade2_Lesson4", "CoachB", "3-4pm"},
+                            {"2024-03-09", "Grade3_Lesson4", "CoachC", "2-3pm"},
+                            {"2024-03-09", "Grade4_Lesson4", "CoachD", "3-4pm"},
+                            {"2024-03-09", "Grade5_Lesson4", "CoachE", "2-3pm"}
+                    }
             }
     };
 
@@ -82,8 +99,10 @@ public class BookSwimmingLesson {
         int dayIndex = getDayIndex(day);
         if (dayIndex != -1) {
             System.out.println("Timetable for " + day + ":");
-            for (String[] lesson : timetable[dayIndex]) {
-                System.out.println("Lesson: " + lesson[0] + ", Coach: " + lesson[1] + ", Time: " + lesson[2]);
+            for (String[][][] week : timetable) {
+                for (String[] lesson : week[dayIndex]) {
+                    System.out.println("Lesson: " + lesson[0] + ", Coach: " + lesson[1] + ", Time: " + lesson[2]);
+                }
             }
             bookLesson(day);
         } else {
@@ -91,14 +110,17 @@ public class BookSwimmingLesson {
         }
     }
 
+
     public void displayTimetableByGrade(String grade) {
         System.out.println("Timetable for Grade " + grade + ":");
         int currentGrade = Integer.parseInt(grade);
-        for (int i = 0; i < timetable.length; i++) {
-            for (String[] lesson : timetable[i]) {
-                int lessonGrade = Integer.parseInt(lesson[0].substring(5, 6));
-                if (lessonGrade == currentGrade || lessonGrade == currentGrade + 1) {
-                    System.out.println("Day: " + DAYS[i] + ", Lesson: " + lesson[0] + ", Coach: " + lesson[1]);
+        for (String[][][] week : timetable) {
+            for (String[][] day : week) {
+                for (String[] lesson : day) {
+                    int lessonGrade = Integer.parseInt(lesson[0].substring(5, 6));
+                    if (lessonGrade == currentGrade || lessonGrade == currentGrade + 1) {
+                        System.out.println("Day: " + day + ", Lesson: " + lesson[0] + ", Coach: " + lesson[1] + ", Time: " + lesson[2]);
+                    }
                 }
             }
         }
@@ -107,10 +129,12 @@ public class BookSwimmingLesson {
 
     public void displayTimetableByCoach(String coach) {
         System.out.println("Timetable for Coach " + coach + ":");
-        for (int i = 0; i < timetable.length; i++) {
-            for (String[] lesson : timetable[i]) {
-                if (lesson[1].equals(coach)) {
-                    System.out.println("Day: " + DAYS[i] + ", Lesson: " + lesson[0] + ", Grade: " + getGrade(lesson[0]) + ", Time: " + lesson[2]);
+        for (String[][][] week : timetable) {
+            for (String[][] day : week) {
+                for (String[] lesson : day) {
+                    if (lesson[1].equals(coach)) {
+                        System.out.println("Day: " + day + ", Lesson: " + lesson[0] + ", Grade: " + getGrade(lesson[0]) + ", Time: " + lesson[2]);
+                    }
                 }
             }
         }
@@ -133,7 +157,6 @@ public class BookSwimmingLesson {
             System.out.println("Invalid grade.");
             return;
         }
-
 
         System.out.print("Enter learner's name: ");
         String name = scanner.nextLine();

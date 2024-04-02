@@ -6,6 +6,7 @@ public class Main {
         System.out.println("Welcome to Hatfield Junior Swimming School!");
         BookSwimmingLesson bookSwimmingLesson = new BookSwimmingLesson();
         Learner learner = new Learner(); // Instantiate a Learner object
+        Report report = new Report();
 
         while (true) {
             System.out.println("\nMenu:");
@@ -29,9 +30,9 @@ public class Main {
                     scanner.nextLine();
                     switch (timetableChoice) {
                         case 1:
-                            System.out.print("Enter the week number to view timetable (1-4): ");
-                            int week = scanner.nextInt();
-                            bookSwimmingLesson.displayTimetable(week - 1);
+                            System.out.print("Enter the day: ");
+                            String day = scanner.nextLine();
+                            bookSwimmingLesson.displayTimetableByDay(day);
                             break;
                         case 2:
                             System.out.print("Enter the grade: ");
@@ -78,8 +79,9 @@ public class Main {
                     break;
                 case 4:
                     // Generate monthly learner report
-                    Report report = new Report(bookSwimmingLesson);
-                    report.generateMonthlyLearnerReport(scanner);
+                    System.out.println("Enter the date in this format:(YYYY-MM-DD)");
+                    String reportMonth = scanner.nextLine();
+                    report.generateMonthlyLearnerReport(bookSwimmingLesson.getBookedLessons(), reportMonth);
                     break;
 
                 case 6:
