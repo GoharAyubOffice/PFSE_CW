@@ -24,7 +24,7 @@ public class AttendLesson {
         System.out.print("Enter the lesson number: ");
         String lessonNumber = scanner.nextLine();
 
-        // Attend the selected lessona
+        // Attend the selected lesson
         if (swimmingLesson.isLessonBooked(day, grade, lessonNumber)) {
             System.out.println("You have attended the lesson.");
             // Ask for review and rating

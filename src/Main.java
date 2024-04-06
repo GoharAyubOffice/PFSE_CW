@@ -5,8 +5,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Hatfield Junior Swimming School!");
         BookSwimmingLesson bookSwimmingLesson = new BookSwimmingLesson();
-        Learner learner = new Learner(); // Instantiate a Learner object
-        Report report = new Report();
+        Learner learner = new Learner();
 
         while (true) {
             System.out.println("\nMenu:");
@@ -81,9 +80,9 @@ public class Main {
                     // Generate monthly learner report
                     System.out.println("Enter the date in this format:(YYYY-MM-DD)");
                     String reportMonth = scanner.nextLine();
+                    Report report = new Report();
                     report.generateMonthlyLearnerReport(bookSwimmingLesson.getBookedLessons(), reportMonth);
                     break;
-
                 case 6:
                     // Register a new learner
                     System.out.print("Enter learner's name: ");
@@ -96,9 +95,9 @@ public class Main {
                     System.out.print("Enter learner's emergency contact phone number: ");
                     String emergencyContact = scanner.nextLine();
                     System.out.print("Enter learner's current grade level: ");
-                    int grade = scanner.nextInt();
+                    int gradeLevel = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
-                    learner.registerNewLearner(name, age, gender, emergencyContact, grade);
+                    learner.registerNewLearner(name, age, gender, emergencyContact, gradeLevel);
                     break;
                 case 7:
                     System.out.println("Exiting the program...");
