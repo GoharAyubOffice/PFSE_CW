@@ -6,6 +6,7 @@ public class BookSwimmingLesson {
     private static final String[] GRADE_LEVELS = {"1", "2", "3", "4", "5"};
     private static final String[] DAYS = {"Monday", "Wednesday", "Friday", "Saturday"};
     private static final String[] COACHES = {"CoachA", "CoachB", "CoachC", "CoachD", "CoachE"};
+
     private static final int LESSON_VACANCY_LIMIT = 4;
 
     private List<String[]> bookedLessons;
@@ -14,6 +15,11 @@ public class BookSwimmingLesson {
 
     private String[][][][] timetable;
     private int[][][] vacancies;
+
+    public List<String[]> getBookedLessons() {
+        return bookedLessons;
+    }
+
 
     public BookSwimmingLesson() {
         bookedLessons = new ArrayList<>();
@@ -147,14 +153,11 @@ public class BookSwimmingLesson {
         lessonReviews.add(reviewData);
     }
 
-    public List<String[]> getBookedLessons() {
-        return bookedLessons;
-    }
 
     private void bookLesson(String name, String date, String lesson, String coach, String time, int week, int dayIndex, int lessonIndex) {
         String grade = lesson.substring(5, 6);
-        String[] lessonData = {date, lesson, grade, name, coach, time};
-        bookedLessons.add(lessonData);
+        String[] lessonData = {date, lesson, grade, name, coach, time}; // Create array of strings
+        bookedLessons.add(lessonData); // Add array of strings to bookedLessons
         vacancies[week][dayIndex][lessonIndex]--;
     }
 
