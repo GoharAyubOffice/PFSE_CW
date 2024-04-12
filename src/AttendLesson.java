@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.List;
 
 public class AttendLesson {
     private BookSwimmingLesson swimmingLesson;
@@ -11,10 +10,16 @@ public class AttendLesson {
     public void attendLesson() {
         Scanner scanner = new Scanner(System.in);
 
-        // Display booked lessons
+        // Prompt the user to enter the name of the learner
+        System.out.print("Enter the name of the learner: ");
+        String learnerName = scanner.nextLine();
+
+        // Display booked lessons for the specified learner
         System.out.println("Booked Lessons:");
         for (String[] lesson : swimmingLesson.getBookedLessons()) {
-            System.out.println("Day: " + lesson[0] + ", Grade: " + lesson[2] + ", Lesson: " + lesson[1]);
+            if (lesson[3].equals(learnerName)) { // Check if the learner's name matches
+                System.out.println("Day: " + lesson[0] + ", Grade: " + lesson[2] + ", Lesson: " + lesson[1]);
+            }
         }
 
         // Select lesson to attend

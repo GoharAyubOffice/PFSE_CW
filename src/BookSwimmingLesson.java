@@ -20,7 +20,6 @@ public class BookSwimmingLesson {
         return bookedLessons;
     }
 
-
     public BookSwimmingLesson() {
         bookedLessons = new ArrayList<>();
         learners = new ArrayList<>();
@@ -271,7 +270,6 @@ public class BookSwimmingLesson {
                 return -1;
         }
     }
-
 
     private String getGrade(String lesson) {
         return lesson.substring(5, 6);
