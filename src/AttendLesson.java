@@ -15,35 +15,32 @@ public class AttendLesson {
         String learnerName = scanner.nextLine();
 
         // Display booked lessons for the specified learner
-        System.out.println("Booked Lessons:");
+        boolean foundBookedLesson = false;
         for (String[] lesson : swimmingLesson.getBookedLessons()) {
-            if (lesson[3].equals(learnerName)) { // Check if the learner's name matches
-                System.out.println("Day: " + lesson[0] + ", Grade: " + lesson[2] + ", Lesson: " + lesson[1]);
+            if (lesson[3].equalsIgnoreCase(learnerName)) { // Check if the learner's name matches
+                System.out.println("Lesson attended by learner: " + learnerName);
+                foundBookedLesson = true;
+
+                // Ask for review and rating
+                System.out.print("Write a review of the lesson: ");
+                String review = scanner.nextLine();
+                System.out.print("Rate the lesson from 1 to 5 (1: Very dissatisfied, 2: Dissatisfied, 3: Ok, 4: Satisfied, 5: Very Satisfied): ");
+                int rating = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
+                System.out.println("Thanks for giving Review :)");
+
+                // Get lesson details
+                String day = lesson[0];
+                String grade = lesson[2];
+                String lessonNumber = lesson[1].substring(lesson[1].indexOf("_Lesson") + 7);
+
+                // Store the review and rating
+                swimmingLesson.addReview(day, grade, lessonNumber, review, rating);
             }
         }
 
-        // Select lesson to attend
-        System.out.print("Enter the day of the lesson you want to attend: ");
-        String day = scanner.nextLine();
-        System.out.print("Enter the grade of the lesson: ");
-        String grade = scanner.nextLine();
-        System.out.print("Enter the lesson number: ");
-        String lessonNumber = scanner.nextLine();
-
-        // Attend the selected lesson
-        if (swimmingLesson.isLessonBooked(day, grade, lessonNumber)) {
-            System.out.println("You have attended the lesson.");
-            // Ask for review and rating
-            System.out.print("Write a review of the lesson: ");
-            String review = scanner.nextLine();
-            System.out.print("Rate the lesson from 1 to 5 (1: Very dissatisfied, 2: Dissatisfied, 3: Ok, 4: Satisfied, 5: Very Satisfied): ");
-            int rating = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-            System.out.print("Thanks for giving Review :)");
-            // Store the review and rating
-            swimmingLesson.addReview(day, grade, lessonNumber, review, rating);
-        } else {
-            System.out.println("No lesson found for the given details.");
+        if (!foundBookedLesson) {
+            System.out.println("No booked lessons found for learner: " + learnerName);
         }
     }
 }

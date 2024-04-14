@@ -10,6 +10,7 @@ public class BookSwimmingLesson {
     private static final int LESSON_VACANCY_LIMIT = 4;
 
     private List<String[]> bookedLessons;
+    private List<String[]> attendedLessons;
     private List<String[]> learners;
     private List<String[]> lessonReviews;
 
@@ -19,9 +20,15 @@ public class BookSwimmingLesson {
     public List<String[]> getBookedLessons() {
         return bookedLessons;
     }
+    public List<String[]> getAttendedLessons() {
+        return attendedLessons;
+    }
+    public List<String[]> getLessonReviews() {return lessonReviews;
+    }
 
     public BookSwimmingLesson() {
         bookedLessons = new ArrayList<>();
+        attendedLessons = new ArrayList<>();
         learners = new ArrayList<>();
         lessonReviews = new ArrayList<>();
         initializeTimetable();
@@ -123,6 +130,8 @@ public class BookSwimmingLesson {
         bookLessonByGrade(grade);
     }
 
+
+
     public void displayTimetableByCoach(String coach) {
         System.out.println("Timetable for Coach " + coach + ":");
         for (int week = 0; week < 4; week++) {
@@ -136,15 +145,6 @@ public class BookSwimmingLesson {
             }
         }
         bookLessonByCoach(coach);
-    }
-
-    public boolean isLessonBooked(String day, String grade, String lessonNumber) {
-        for (String[] lesson : bookedLessons) {
-            if (lesson[0].equalsIgnoreCase(day) && lesson[2].equalsIgnoreCase(grade) && lesson[1].equalsIgnoreCase(lessonNumber)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public void addReview(String day, String grade, String lessonNumber, String review, int rating) {
@@ -166,6 +166,22 @@ public class BookSwimmingLesson {
         if (dayIndex == -1) {
             System.out.println("Invalid day.");
             return;
+        }
+
+        System.out.print("Enter the week number: ");
+        int week = scanner.nextInt();
+        week--; // Adjusting week number to array index
+
+        if (week < 0 || week >= 4) {
+            System.out.println("Invalid week number.");
+            return;
+        }
+
+        System.out.println("Timetable for " + day + " (Week " + (week + 1) + "):");
+        System.out.println("-------------------------------------------");
+        for (String[] lesson : timetable[week][dayIndex]) {
+            int vacancies = getVacancies(week, dayIndex, lesson[1]);
+            System.out.println("Date: " + lesson[0] + ", Lesson: " + lesson[1] + ", Coach: " + lesson[2] + ", Time: " + lesson[3] + ", Vacancies: " + vacancies);
         }
 
         System.out.print("Enter the lesson number to book: ");
@@ -198,12 +214,6 @@ public class BookSwimmingLesson {
         System.out.print("Enter learner's emergency contact phone number: ");
         String emergencyContact = scanner.next();
 
-        int week = getWeekFromDate(day); // Adjusted to get the week from the provided day
-        if (week == -1) {
-            System.out.println("Invalid date format.");
-            return;
-        }
-
         if (vacancies[week][dayIndex][lessonNumber - 1] <= 0) {
             System.out.println("No vacancies available for this lesson.");
             return;
@@ -217,6 +227,7 @@ public class BookSwimmingLesson {
 
         System.out.println("Lesson booked successfully.");
     }
+
 
     private void bookLessonByGrade(String grade) {
         Scanner scanner = new Scanner(System.in);

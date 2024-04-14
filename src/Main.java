@@ -6,6 +6,7 @@ public class Main {
         System.out.println("Welcome to Hatfield Junior Swimming School!");
         BookSwimmingLesson bookSwimmingLesson = new BookSwimmingLesson();
         Learner learner = new Learner();
+        Report report = new Report();
 
         while (true) {
             System.out.println("\nMenu:");
@@ -78,10 +79,11 @@ public class Main {
                     break;
                 case 4:
                     // Generate monthly learner report
-                    System.out.println("Enter the date in this format:(YYYY-MM-DD)");
-                    String reportMonth = scanner.nextLine();
-                    Report report = new Report();
-                    report.generateMonthlyLearnerReport(bookSwimmingLesson.getBookedLessons(), reportMonth);
+                    report.generateLearnerReport(bookSwimmingLesson.getBookedLessons(), bookSwimmingLesson.getAttendedLessons());
+                    break;
+                case 5:
+                    // Generate monthly coach report
+                    report.generateCoachReport(bookSwimmingLesson.getLessonReviews());
                     break;
                 case 6:
                     // Register a new learner
