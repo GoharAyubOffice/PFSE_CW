@@ -79,7 +79,7 @@ public class Main {
                     break;
                 case 4:
                     // Generate monthly learner report
-                    report.generateLearnerReport(bookSwimmingLesson.getBookedLessons(), bookSwimmingLesson.getAttendedLessons());
+                    report.generateLearnerReport(bookSwimmingLesson.getBookedLessons(), bookSwimmingLesson.getAttendedLessons(), bookSwimmingLesson.getLearners());
                     break;
                 case 5:
                     // Generate monthly coach report

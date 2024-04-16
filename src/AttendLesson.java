@@ -36,6 +36,12 @@ public class AttendLesson {
 
                 // Store the review and rating
                 swimmingLesson.addReview(day, grade, lessonNumber, review, rating);
+
+                // Upgrade learner's grade
+                int currentGrade = Integer.parseInt(grade);
+                int newGrade = currentGrade + 1;
+                System.out.println("Congratulations! Your grade has been upgraded from " + currentGrade + " to " + newGrade);
+                swimmingLesson.upgradeLearnerGrade(learnerName, Integer.toString(newGrade));
             }
         }
 

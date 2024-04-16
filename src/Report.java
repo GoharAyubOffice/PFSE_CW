@@ -4,27 +4,40 @@ import java.util.List;
 import java.util.Map;
 
 public class Report {
-    public void generateLearnerReport(List<String[]> bookedLessons, List<String[]> attendedLessons) {
-        Map<String, String> learnerStatusMap = new HashMap<>();
+    public void generateLearnerReport(List<String[]> bookedLessons, List<String[]> attendedLessons, List<String[]> learners) {
+        Map<String, String[]> learnerDetailsMap = new HashMap<>();
+        Map<String, Boolean> learnerAttendanceMap = new HashMap<>();
 
-        // Populate learner status map with booked lessons
-        for (String[] lesson : bookedLessons) {
-            learnerStatusMap.put(lesson[3], "Booked but not attended");
+        // Populate learner details map with learner data
+        for (String[] learner : learners) {
+            String name = learner[0];
+            String gender = learner[1];
+            String grade = learner[4];
+            String emergencyContact = learner[3];
+            learnerDetailsMap.put(name, new String[]{gender, grade, emergencyContact});
         }
 
-        // Update learner status map with attended lessons
+        // Mark learners as attended
         for (String[] lesson : attendedLessons) {
-            learnerStatusMap.put(lesson[3], "Attended");
+            String learnerName = lesson[3];
+            learnerAttendanceMap.put(learnerName, true);
         }
 
         // Print learner report
-        System.out.println("╔══════════════════════════════════════════════════════════╗");
-        System.out.println("║                       Learner Report                       ║");
-        System.out.println("╠══════════════════════════════════════════════════════════╣");
-        for (Map.Entry<String, String> entry : learnerStatusMap.entrySet()) {
-            System.out.printf("║ Learner: %-20s Status: %-20s ║\n", entry.getKey(), entry.getValue());
+        System.out.println("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+        System.out.println("║                       Learner Report                                                                          ║");
+        System.out.println("╠══════════════════════════════════════════════════════════════════════════════════════════════════════════════╣");
+        for (Map.Entry<String, String[]> entry : learnerDetailsMap.entrySet()) {
+            String learnerName = entry.getKey();
+            String[] details = entry.getValue();
+            String gender = details[0];
+            String grade = details[1];
+            String emergencyContact = details[2];
+            boolean attended = learnerAttendanceMap.getOrDefault(learnerName, false);
+            String status = attended ? "Attended" : "Booked but not attended";
+            System.out.printf("║ Learner: %-20s Gender: %-6s Grade: %-3s Emergency Contact: %-12s Status: %-20s ║\n", learnerName, gender, grade, emergencyContact, status);
         }
-        System.out.println("╚══════════════════════════════════════════════════════════╝");
+        System.out.println("╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
     }
 
     public void generateCoachReport(List<String[]> lessonReviews) {

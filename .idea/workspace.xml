@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13e074f5-3c8f-482f-9433-aa3428d17dc7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hatfeild Junior Swimming System/AttendLesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hatfeild Junior Swimming System/AttendLesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hatfeild Junior Swimming System/BookSwimmingLesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hatfeild Junior Swimming System/BookSwimmingLesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hatfeild Junior Swimming System/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hatfeild Junior Swimming System/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hatfeild Junior Swimming System/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hatfeild Junior Swimming System/Report.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AttendLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AttendLesson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BookSwimmingLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookSwimmingLesson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -71,6 +62,8 @@
       <updated>1713021305074</updated>
       <workItem from="1713021306304" duration="807000" />
       <workItem from="1713022617215" duration="5419000" />
+      <workItem from="1713279722123" duration="9000" />
+      <workItem from="1713279738524" duration="4447000" />
     </task>
     <servers />
   </component>

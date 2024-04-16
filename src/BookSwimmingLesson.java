@@ -1,29 +1,36 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Random;
 
 public class BookSwimmingLesson {
     private static final String[] GRADE_LEVELS = {"1", "2", "3", "4", "5"};
     private static final String[] DAYS = {"Monday", "Wednesday", "Friday", "Saturday"};
-    private static final String[] COACHES = {"CoachA", "CoachB", "CoachC", "CoachD", "CoachE"};
-
+    private static final String[] COACHES = {"CoachA", "CoachB", "CoachC", "CoachD"};
     private static final int LESSON_VACANCY_LIMIT = 4;
+    private static final int LESSONS_PER_WEEKDAY = 3;
+    private static final int LESSONS_ON_SATURDAY = 2;
 
     private List<String[]> bookedLessons;
     private List<String[]> attendedLessons;
     private List<String[]> learners;
     private List<String[]> lessonReviews;
-
     private String[][][][] timetable;
     private int[][][] vacancies;
 
     public List<String[]> getBookedLessons() {
         return bookedLessons;
     }
+
     public List<String[]> getAttendedLessons() {
         return attendedLessons;
     }
-    public List<String[]> getLessonReviews() {return lessonReviews;
+
+    public List<String[]> getLessonReviews() {
+        return lessonReviews;
+    }
+    public List<String[]> getLearners() {
+        return learners;
     }
 
     public BookSwimmingLesson() {
@@ -40,9 +47,10 @@ public class BookSwimmingLesson {
         timetable = new String[4][DAYS.length][][];
         for (int week = 0; week < 4; week++) {
             for (int dayIndex = 0; dayIndex < DAYS.length; dayIndex++) {
-                timetable[week][dayIndex] = new String[5][];
-                for (int lessonIndex = 0; lessonIndex < 5; lessonIndex++) {
-                    String coach = COACHES[lessonIndex];
+                int lessonsPerDay = (dayIndex == DAYS.length - 1) ? LESSONS_ON_SATURDAY : LESSONS_PER_WEEKDAY;
+                timetable[week][dayIndex] = new String[lessonsPerDay][];
+                for (int lessonIndex = 0; lessonIndex < lessonsPerDay; lessonIndex++) {
+                    String coach = COACHES[lessonIndex % COACHES.length];
                     String time = "4-5pm";
                     String date = "2024-04-0" + (week * 7 + dayIndex + 1);
                     String lessonName = "Grade" + (dayIndex + 1) + "_Lesson" + lessonIndex;
@@ -53,10 +61,12 @@ public class BookSwimmingLesson {
     }
 
     private void initializeVacancies() {
-        vacancies = new int[4][DAYS.length][5];
+        vacancies = new int[4][DAYS.length][];
         for (int week = 0; week < 4; week++) {
             for (int dayIndex = 0; dayIndex < DAYS.length; dayIndex++) {
-                for (int lessonIndex = 0; lessonIndex < 5; lessonIndex++) {
+                int lessonsPerDay = (dayIndex == DAYS.length - 1) ? LESSONS_ON_SATURDAY : LESSONS_PER_WEEKDAY;
+                vacancies[week][dayIndex] = new int[lessonsPerDay];
+                for (int lessonIndex = 0; lessonIndex < lessonsPerDay; lessonIndex++) {
                     vacancies[week][dayIndex][lessonIndex] = LESSON_VACANCY_LIMIT;
                 }
             }
@@ -64,17 +74,28 @@ public class BookSwimmingLesson {
     }
 
     private void initializeLearners() {
+        Random rand = new Random();
+        String[] maleNames = {"James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Charles", "Thomas"};
+        String[] femaleNames = {"Mary", "Patricia", "Linda", "Barbara", "Elizabeth", "Jennifer", "Maria", "Susan", "Margaret", "Dorothy"};
+
         for (int i = 0; i < 10; i++) {
-            String name = "Learner" + (i + 1);
-            String gender = (i % 2 == 0) ? "Male" : "Female";
-            int age = 6 + (i % 4);
+            String name;
+            String gender;
+            if (rand.nextBoolean()) {
+                name = maleNames[rand.nextInt(maleNames.length)];
+                gender = "Male";
+            } else {
+                name = femaleNames[rand.nextInt(femaleNames.length)];
+                gender = "Female";
+            }
+            int age = 6 + (rand.nextInt(4));
             String emergencyContact = "123456789" + i;
-            String grade = GRADE_LEVELS[i % GRADE_LEVELS.length];
+            String grade = GRADE_LEVELS[rand.nextInt(GRADE_LEVELS.length)];
             String[] learnerData = {name, gender, Integer.toString(age), emergencyContact, grade};
             learners.add(learnerData);
             for (int week = 0; week < 4; week++) {
                 for (int dayIndex = 0; dayIndex < DAYS.length; dayIndex++) {
-                    for (int lessonIndex = 0; lessonIndex < 5; lessonIndex++) {
+                    for (int lessonIndex = 0; lessonIndex < timetable[week][dayIndex].length; lessonIndex++) {
                         if (Math.random() < 0.3) {
                             String[] lessonData = timetable[week][dayIndex][lessonIndex];
                             bookLesson(name, lessonData[0], lessonData[1], lessonData[2], lessonData[3], week, dayIndex, lessonIndex);
@@ -130,7 +151,14 @@ public class BookSwimmingLesson {
         bookLessonByGrade(grade);
     }
 
-
+    public void upgradeLearnerGrade(String learnerName, String newGrade) {
+        for (String[] learner : learners) {
+            if (learner[0].equalsIgnoreCase(learnerName)) {
+                learner[4] = newGrade;
+                return;
+            }
+        }
+    }
 
     public void displayTimetableByCoach(String coach) {
         System.out.println("Timetable for Coach " + coach + ":");
@@ -151,7 +179,6 @@ public class BookSwimmingLesson {
         String[] reviewData = {day, grade, lessonNumber, review, String.valueOf(rating)};
         lessonReviews.add(reviewData);
     }
-
 
     private void bookLesson(String name, String date, String lesson, String coach, String time, int week, int dayIndex, int lessonIndex) {
         String grade = lesson.substring(5, 6);
@@ -186,7 +213,7 @@ public class BookSwimmingLesson {
 
         System.out.print("Enter the lesson number to book: ");
         int lessonNumber = scanner.nextInt();
-        if (lessonNumber < 1 || lessonNumber > 5) {
+        if (lessonNumber < 1 || lessonNumber > LESSONS_PER_WEEKDAY) {
             System.out.println("Invalid lesson number.");
             return;
         }
@@ -227,7 +254,6 @@ public class BookSwimmingLesson {
 
         System.out.println("Lesson booked successfully.");
     }
-
 
     private void bookLessonByGrade(String grade) {
         Scanner scanner = new Scanner(System.in);
