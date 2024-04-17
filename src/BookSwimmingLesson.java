@@ -6,7 +6,7 @@ import java.util.Random;
 public class BookSwimmingLesson {
     private static final String[] GRADE_LEVELS = {"1", "2", "3", "4", "5"};
     private static final String[] DAYS = {"Monday", "Wednesday", "Friday", "Saturday"};
-    private static final String[] COACHES = {"CoachA", "CoachB", "CoachC", "CoachD"};
+    private static final String[] COACHES = {"Coach_Gohar", "Coach_Sajid", "Coach_Aashar", "Coach_Furqan"};
     private static final int LESSON_VACANCY_LIMIT = 4;
     private static final int LESSONS_PER_WEEKDAY = 3;
     private static final int LESSONS_ON_SATURDAY = 2;
@@ -53,7 +53,7 @@ public class BookSwimmingLesson {
                     String coach = COACHES[lessonIndex % COACHES.length];
                     String time = "4-5pm";
                     String date = "2024-04-0" + (week * 7 + dayIndex + 1);
-                    String lessonName = "Grade" + (dayIndex + 1) + "_Lesson" + lessonIndex;
+                    String lessonName = "Grade" + (dayIndex + 1) + "_Lesson" + (lessonIndex + 1); // Adjust lesson index here
                     timetable[week][dayIndex][lessonIndex] = new String[]{date, lessonName, coach, time};
                 }
             }
@@ -314,7 +314,7 @@ public class BookSwimmingLesson {
 
     private int getVacancies(int week, int dayIndex, String lesson) {
         String lessonNumber = lesson.substring(lesson.indexOf("_Lesson") + 7);
-        int vacancies = this.vacancies[week][dayIndex][Integer.parseInt(lessonNumber)];
+        int vacancies = this.vacancies[week][dayIndex][Integer.parseInt(lessonNumber) - 1]; // Adjust lesson index here
         return Math.max(0, vacancies);
     }
 }

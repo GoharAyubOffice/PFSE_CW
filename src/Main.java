@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -79,11 +80,14 @@ public class Main {
                     break;
                 case 4:
                     // Generate monthly learner report
-                    report.generateLearnerReport(bookSwimmingLesson.getBookedLessons(), bookSwimmingLesson.getAttendedLessons(), bookSwimmingLesson.getLearners());
+                    List<String[]> bookedLessons = bookSwimmingLesson.getBookedLessons();
+                    List<String[]> attendedLessons = bookSwimmingLesson.getAttendedLessons();
+                    List<String[]> learners = bookSwimmingLesson.getLearners();
+                    report.generateLearnerReport(bookedLessons, attendedLessons, learners);
                     break;
                 case 5:
                     // Generate monthly coach report
-                    report.generateCoachReport(bookSwimmingLesson.getLessonReviews());
+                    report.generateCoachReport();
                     break;
                 case 6:
                     // Register a new learner

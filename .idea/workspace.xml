@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="13e074f5-3c8f-482f-9433-aa3428d17dc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AttendLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AttendLesson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/UML.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/BookSwimmingLesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PFSE_CW/BookSwimmingLesson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PFSE_CW/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PFSE_CW/Report.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BookSwimmingLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookSwimmingLesson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Report.java" afterDir="false" />
@@ -32,6 +35,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -63,7 +67,9 @@
       <workItem from="1713021306304" duration="807000" />
       <workItem from="1713022617215" duration="5419000" />
       <workItem from="1713279722123" duration="9000" />
-      <workItem from="1713279738524" duration="4447000" />
+      <workItem from="1713279738524" duration="5107000" />
+      <workItem from="1713365837765" duration="1229000" />
+      <workItem from="1713368438117" duration="5288000" />
     </task>
     <servers />
   </component>
