@@ -12,7 +12,7 @@ public class Report {
 
         // Define arrays for grades, coaches, and lesson statuses
         String[] GRADES = {"1", "2", "3", "4"};
-        String[] COACHES = {"CoachA", "CoachB", "CoachC", "CoachD"};
+        String[] COACHES = {"James", "Gohar", "Aashar", "Furqan"};
         String[] LESSON_STATUSES = {"Booked", "Attended", "Canceled"};
 
         // Generate learner names
@@ -104,6 +104,5 @@ public class Report {
         return reviews[random.nextInt(reviews.length)];
     }
 }
-
 
 

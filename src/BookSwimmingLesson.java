@@ -73,6 +73,11 @@ public class BookSwimmingLesson {
         }
     }
 
+    public void registerNewLearner(String name, int age, String gender, String emergencyContact, int gradeLevel) {
+        learners.add(new String[]{name, Integer.toString(age), gender, emergencyContact, Integer.toString(gradeLevel)});
+    }
+
+
     private void initializeLearners() {
         Random rand = new Random();
         String[] maleNames = {"James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Charles", "Thomas"};
@@ -306,6 +311,27 @@ public class BookSwimmingLesson {
                 System.out.println("Invalid day.");
                 return -1;
         }
+    }
+    public void bookLesson(String name) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Booking a swimming lesson for learner: " + name);
+
+        System.out.print("Enter the day: ");
+        String day = scanner.nextLine();
+        displayTimetableByDay(day);
+
+        System.out.print("Enter the lesson number to book: ");
+        int lessonNumber = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        if (lessonNumber < 1 || lessonNumber > 3) {
+            System.out.println("Invalid lesson number.");
+            return;
+        }
+
+        String[] lessonData = timetable[0][getDayIndex(day)][lessonNumber - 1];
+        bookLesson(name, lessonData[0], lessonData[1], lessonData[2], lessonData[3], 0, getDayIndex(day), lessonNumber - 1);
+        System.out.println("Lesson booked successfully.");
     }
 
     private String getGrade(String lesson) {

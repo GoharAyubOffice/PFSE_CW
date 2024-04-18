@@ -86,7 +86,6 @@ public class Main {
                     report.generateLearnerReport(bookedLessons, attendedLessons, learners);
                     break;
                 case 5:
-                    // Generate monthly coach report
                     report.generateCoachReport();
                     break;
                 case 6:
