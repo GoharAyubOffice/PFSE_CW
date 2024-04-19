@@ -47,12 +47,12 @@ public class Report {
             Map<String, String> lessonStatuses = new HashMap<>();
             for (String[] lesson : bookedLessons) {
                 if (lesson[3].equals(learnerName)) {
-                    lessonStatuses.put(lesson[1], "Booked");
+                    lessonStatuses.put(lesson[1], "Attended");
                 }
             }
             for (String[] lesson : attendedLessons) {
                 if (lesson[3].equals(learnerName)) {
-                    lessonStatuses.put(lesson[1], "Attended");
+                    lessonStatuses.put(lesson[1], "Booked");
                 }
             }
             learnerLessons.put(learnerName, lessonStatuses);
@@ -87,7 +87,7 @@ public class Report {
             reviews.append("Lesson 3: Clear instructions and feedback\n");
 
             // Add random statements for coach reviews
-            reviews.append("Random Coach Reviews:\n");
+            reviews.append("Coach Reviews:\n");
             for (int i = 0; i < 3; i++) {
                 String randomReview = generateRandomReview();
                 reviews.append(randomReview).append("\n");

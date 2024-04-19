@@ -1,12 +1,10 @@
-package test;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BookSwimmingLessonTest {
+class Change_Cancel_BookingTest {
 
     @Test
-    void viewTimetableCategories() {
+    void cancelBooking() {
     }
 }

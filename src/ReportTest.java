@@ -1,12 +1,9 @@
-package test;
-
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class AttendLessonTest {
-
+public class ReportTest {
     @Test
-    void attendLesson() {
+    void testGenerateLearnerReport() {
+
     }
 }

@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13e074f5-3c8f-482f-9433-aa3428d17dc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/BookSwimmingLessonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ReportTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/AttendLesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PFSE_CW/AttendLesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/BookSwimmingLesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PFSE_CW/BookSwimmingLesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PFSE_CW/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PFSE_CW/Report.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AttendLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AttendLesson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookSwimmingLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookSwimmingLesson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/test/AttendLessonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/test/BookSwimmingLessonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/test/Change_Cancel_BookingTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/test/LearnerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/test/MainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PFSE_CW/test/ReportTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/AttendLessonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AttendLessonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/BookSwimmingLessonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Change_Cancel_BookingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Change_Cancel_BookingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/LearnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LearnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ReportTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,38 +49,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.AttendLessonTest.attendLesson.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookSwimmingLessonTest.viewTimetableCategories.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Change_Cancel_BookingTest.cancelBooking.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LearnerTest.registerNewLearner.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MainTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MainTest.main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ReportTest.generateLearnerReport.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/goharayub/Library/CloudStorage/OneDrive-UniversityofHertfordshire/PFSE/PFSE_CW&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.AttendLessonTest.attendLesson.executor": "Run",
+    "JUnit.BookSwimmingLesson.testDisplayTimetableByDay.executor": "Run",
+    "JUnit.BookSwimmingLessonTest.testDisplayTimetableByDay.executor": "Run",
+    "JUnit.BookSwimmingLessonTest.viewTimetableCategories.executor": "Run",
+    "JUnit.Change_Cancel_BookingTest.cancelBooking.executor": "Run",
+    "JUnit.LearnerTest.registerNewLearner.executor": "Run",
+    "JUnit.MainTest.executor": "Run",
+    "JUnit.MainTest.main.executor": "Run",
+    "JUnit.ReportTest.executor": "Run",
+    "JUnit.ReportTest.generateLearnerReport.executor": "Run",
+    "JUnit.ReportTest.testGenerateLearnerReport.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/goharayub/Library/CloudStorage/OneDrive-UniversityofHertfordshire/PFSE/PFSE_CW",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -81,11 +93,14 @@
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/test" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="test" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ReportTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="PFSE_CW" />
@@ -93,65 +108,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AttendLessonTest.attendLesson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookSwimmingLessonTest.testDisplayTimetableByDay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PFSE_CW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.AttendLessonTest" />
-      <option name="METHOD_NAME" value="attendLesson" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BookSwimmingLessonTest" />
+      <option name="METHOD_NAME" value="testDisplayTimetableByDay" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LearnerTest.registerNewLearner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookSwimmingLesson.testDisplayTimetableByDay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PFSE_CW" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.LearnerTest" />
-      <option name="METHOD_NAME" value="registerNewLearner" />
+      <option name="MAIN_CLASS_NAME" value="test.BookSwimmingLesson" />
+      <option name="METHOD_NAME" value="testDisplayTimetableByDay" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReportTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PFSE_CW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.MainTest" />
-      <option name="METHOD_NAME" value="main" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ReportTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReportTest.generateLearnerReport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReportTest.testGenerateLearnerReport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PFSE_CW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.ReportTest" />
-      <option name="METHOD_NAME" value="generateLearnerReport" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ReportTest" />
+      <option name="METHOD_NAME" value="testGenerateLearnerReport" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReportTest" />
+        <item itemvalue="JUnit.ReportTest.testGenerateLearnerReport" />
+        <item itemvalue="JUnit.BookSwimmingLessonTest.testDisplayTimetableByDay" />
+        <item itemvalue="JUnit.BookSwimmingLesson.testDisplayTimetableByDay" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.AttendLessonTest.attendLesson" />
-        <item itemvalue="JUnit.ReportTest.generateLearnerReport" />
-        <item itemvalue="JUnit.MainTest.main" />
-        <item itemvalue="JUnit.LearnerTest.registerNewLearner" />
       </list>
     </recent_temporary>
   </component>
@@ -195,6 +191,7 @@
       <workItem from="1713551098538" duration="6469000" />
       <workItem from="1713558619913" duration="1543000" />
       <workItem from="1713560178666" duration="320000" />
+      <workItem from="1713560594645" duration="5855000" />
     </task>
     <servers />
   </component>
