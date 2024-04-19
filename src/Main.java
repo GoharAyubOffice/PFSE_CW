@@ -1,14 +1,13 @@
 import java.util.Scanner;
 import java.util.List;
-
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Hatfield Junior Swimming School!");
         BookSwimmingLesson bookSwimmingLesson = new BookSwimmingLesson();
         Learner learner = new Learner();
-        Report report = new Report();
-
+        Report report = new Report(bookSwimmingLesson);
         while (true) {
             System.out.println("\nMenu:");
             System.out.println("1. Book a swimming lesson");
@@ -86,6 +85,7 @@ public class Main {
                     report.generateLearnerReport(bookedLessons, attendedLessons, learners);
                     break;
                 case 5:
+                    report.generateRandomCoachInfo();
                     report.generateCoachReport();
                     break;
                 case 6:

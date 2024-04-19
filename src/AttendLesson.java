@@ -37,6 +37,10 @@ public class AttendLesson {
                 // Store the review and rating
                 swimmingLesson.addReview(day, grade, lessonNumber, review, rating);
 
+                // Store coach review and rating
+                String coachName = lesson[4];
+                swimmingLesson.addCoachReview(coachName, review, rating);
+
                 // Upgrade learner's grade
                 int currentGrade = Integer.parseInt(grade);
                 int newGrade = currentGrade + 1;

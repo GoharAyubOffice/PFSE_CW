@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Random;
-
+import java.util.Map;
+import java.util.HashMap;
 public class BookSwimmingLesson {
     private static final String[] GRADE_LEVELS = {"1", "2", "3", "4", "5"};
     private static final String[] DAYS = {"Monday", "Wednesday", "Friday", "Saturday"};
@@ -15,6 +16,7 @@ public class BookSwimmingLesson {
     private List<String[]> attendedLessons;
     private List<String[]> learners;
     private List<String[]> lessonReviews;
+    private Map<String, List<String>> coachReviews;
     private String[][][][] timetable;
     private int[][][] vacancies;
 
@@ -33,11 +35,20 @@ public class BookSwimmingLesson {
         return learners;
     }
 
+    public void addCoachReview(String coachName, String review, double rating) {
+        if (!coachReviews.containsKey(coachName)) {
+            coachReviews.put(coachName, new ArrayList<>());
+        }
+        List<String> reviews = coachReviews.get(coachName);
+        reviews.add(review);
+        // You can optionally store the rating as well
+    }
     public BookSwimmingLesson() {
         bookedLessons = new ArrayList<>();
         attendedLessons = new ArrayList<>();
         learners = new ArrayList<>();
         lessonReviews = new ArrayList<>();
+        coachReviews = new HashMap<>();
         initializeTimetable();
         initializeVacancies();
         initializeLearners();
